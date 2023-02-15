@@ -1,0 +1,20 @@
+{
+  "private": true,
+  "name": "template-frontend",
+  "scripts": {
+    "postinstall": "elm-tooling install",
+    "start": "elm-watch hot",
+    "build": "elm-watch make --debug",
+    "bundle" : "npm run build && esbuild index.js *.html *.css *.ico --bundle --loader:.html=copy  --loader:.css=copy --loader:.ico=copy --outdir=dist --sourcemap ",
+    "serve" : "npm run bundle && esbuild --servedir=dist",
+    "test": "elm-test-rs"
+  },
+  "devDependencies": {
+    "elm-tooling": "^1.10.0",
+    "elm-watch": "^1.0.2"
+  },
+  "dependencies": {
+    "esbuild": "0.17.8",
+    "firebase": "^9.17.1"
+  }
+}
